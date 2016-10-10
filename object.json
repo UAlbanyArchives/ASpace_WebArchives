@@ -1,0 +1,68 @@
+[
+  {
+    "lock_version": 2, 
+    "external_documents": [
+      {
+        "lock_version": 0, 
+        "system_mtime": "2016-10-10T18:58:58Z", 
+        "jsonmodel_type": "external_document", 
+        "title": "Status", 
+        "publish": false, 
+        "user_mtime": "2016-10-10T18:58:58Z", 
+        "last_modified_by": "admin", 
+        "create_time": "2016-10-10T18:58:58Z", 
+        "created_by": "admin", 
+        "location": "Active"
+      }, 
+      {
+        "lock_version": 0, 
+        "system_mtime": "2016-10-10T18:58:59Z", 
+        "jsonmodel_type": "external_document", 
+        "title": "URL", 
+        "publish": false, 
+        "user_mtime": "2016-10-10T18:58:59Z", 
+        "last_modified_by": "admin", 
+        "create_time": "2016-10-10T18:58:59Z", 
+        "created_by": "admin", 
+        "location": "http://www.albany.edu/ceas/"
+      }
+    ], 
+    "extents": [], 
+    "jsonmodel_type": "archival_object", 
+    "ref_id": "18ba12f665c63dbc4048c0f7395f29ba", 
+    "instances": [], 
+    "create_time": "2016-10-10T17:56:18Z", 
+    "created_by": "admin", 
+    "parent": {
+      "ref": "/repositories/2/archival_objects/131743"
+    }, 
+    "title": "College of Engineering and Applied Sciences Website", 
+    "display_string": "College of Engineering and Applied Sciences Website", 
+    "publish": true, 
+    "subjects": [], 
+    "other_level": "Web Archives", 
+    "system_mtime": "2016-10-10T18:58:58Z", 
+    "linked_agents": [], 
+    "repository": {
+      "ref": "/repositories/2"
+    }, 
+    "has_unpublished_ancestor": false, 
+    "user_mtime": "2016-10-10T18:58:58Z", 
+    "rights_statements": [], 
+    "linked_events": [], 
+    "external_ids": [], 
+    "suppressed": false, 
+    "dates": [], 
+    "component_id": "nam_ua670-3_1", 
+    "resource": {
+      "ref": "/repositories/2/resources/387"
+    }, 
+    "language": "eng", 
+    "level": "otherlevel", 
+    "notes": [], 
+    "uri": "/repositories/2/archival_objects/131752", 
+    "last_modified_by": "admin", 
+    "restrictions_apply": false, 
+    "position": 0
+  }
+]
