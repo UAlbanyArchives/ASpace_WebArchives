@@ -83,9 +83,73 @@ def UpdateWebRecord(webObjectList):
 					response = requests.get(requestURL)
 					if len(response.text) > 5:
 						responseText  = response.text
+						responseLines = responseText.split("\n")
+						
+						firstPage = responseLines[0]
+						for capture in responseLines:
+							
+							"""
+							if webContainer.attrib["label"].lower() == "initial":
+								#initial updates of inactive pages
+								if unitdate.text is None:
+									raise ValueError("No end date for inital inactive file-level web archives record " + webRecord.attrib["id"])
+								elif "/" in unitdate.attrib("normal"):
+									endDate = unitdate.attrib("normal").split("/")[1]
+								else:
+									endDate = unitdate.attrib("normal")
+								endDateStamp = "".join(endDate.split("-")) + "235959"
+								for textLine in responseLines:
+									#eliminate captures after end date
+									if textLine.split(" ")[1] < endDateStamp:
+										captureCount = captureCount + 1
+										if len(textLine) > 5:
+											lastPage = textLine
+								#change inital record to inactive
+								webContainer.set("label", "inactive")
+								
+							else:
+								#active collections
+								for textLine in responseLines:
+									captureCount = captureCount + 1
+									if len(textLine) > 5:
+										lastPage = textLine
+										
+							#get date range of captures
+							firstDate = firstPage.split(" ")[1]
+							lastDate = lastPage.split(" ")[1]
+							if firstDate == lastDate:
+								#only one capture
+								#get DACS and normal dates
+								displayDate, normalDate = stamp2DACS(firstDate)
+								unitdate.text = displayDate
+								unitdate.set("normal", normalDate)
+							else:
+								#get DACS and normal dates
+								firstDisplay, firstNormal = stamp2DACS(firstDate)
+								lastDisplay, lastNormal = stamp2DACS(lastDate)
+								unitdate.text = firstDisplay + "-" + lastDisplay
+								unitdate.set("normal", firstNormal + "/" + lastNormal)
+							
+							#update extent
+							if webRecord.find("did/physdesc") is None:
+								physdesc = ET.Element("physdesc")
+								extent = ET.Element("extent")
+								extent.set("unit", "captures")
+								extent.text = str(captureCount)
+								physdesc.append(extent)
+								webRecord.find("did").append(physdesc)
+							elif webRecord.find("did/physdesc/extent"):
+								extent = ET.Element("extent")
+								extent.set("unit", "captures")
+								extent.text = str(captureCount)
+								webRecord.find("did/physdesc").append(extent)
+							else:
+								extent = webRecord.find("did/physdesc/extent")
+								extent.set("unit", "captures")
+								extent.text = str(captureCount)
+							"""
 				
-				
-				requestIA = "https://web.archive.org/cdx/search/cdx?url=" + webUrl
+				requestIA = "https://web.archive.org/cdx/search/cdx?url=" + webURL
 				
 				
 				csvFile.close()
@@ -112,7 +176,6 @@ for repo in repos:
 	resources = requests.get(aspaceURL + repoPath + "/resources?page=1&page_size=200",  headers=headers).json()
 	count = 0
 	for record in resources["results"]:
-		print ("...")
 		#pp(record)
 		#print (record["ead_id"] + " -- " + record["title"])
 		count = count + 1
