@@ -48,13 +48,15 @@ config.read(os.path.join(__location__, "webArchives.ini"))
 user = config.get('config_data', 'Username')
 pw = config.get('config_data', 'Password')
 aspaceURL = config.get('config_data', 'Backend_URL')
-webExtentType = config.get('config_data', 'Web_Extents')
-webDatesLabel = config.get('config_data', 'Web_Dates_Label')
-publishNotes = config.get('config_data', 'Publish_Notes')
-acqinfoLabel = config.get('config_data', 'Archive-It_Acqinfo')
-acqinfoLabelIA = config.get('config_data', 'InternetArchive_Acqinfo')
-warcLabel = config.get('config_data', 'WARC_Label')
-daoTitle = config.get('config_data', 'Digital_Object_Title')
+paginatedResults = config.get('config_data', 'Paginated_Results')
+updateParentRecords = config.get('config_data', 'Update_Parents')
+webExtentType = config.get('custom_labels', 'Web_Extents')
+webDatesLabel = config.get('custom_labels', 'Web_Dates_Label')
+publishNotes = config.get('custom_labels', 'Publish_Notes')
+acqinfoLabel = config.get('custom_labels', 'Archive-It_Acqinfo')
+acqinfoLabelIA = config.get('custom_labels', 'InternetArchive_Acqinfo')
+warcLabel = config.get('custom_labels', 'WARC_Label')
+daoTitle = config.get('custom_labels', 'Digital_Object_Title')
 
 #get acqinfo from webArchivesData.csv
 csv.register_dialect('piper', delimiter='|', quoting=csv.QUOTE_NONE)
@@ -65,7 +67,7 @@ csvFile.close()
 
 def UpdateWebRecord(webObjectList):
 	for webObject in webObjectList:
-		serializeOutput("object", webObject)
+		#serializeOutput("object", webObject)
 		objectID = webObject["uri"].split("/archival_objects/")[1]
 		if "external_documents" in webObject:
 			webInfo = webObject["external_documents"]
@@ -88,6 +90,7 @@ def UpdateWebRecord(webObjectList):
 								checkStatus = True
 					else:
 						checkStatus = True
+						#serializeOutput("object", webObject)
 				if exDoc["title"].lower() == "url":
 					webURL = exDoc["location"].lower()
 					if not webURL.startswith("http"):
@@ -95,7 +98,7 @@ def UpdateWebRecord(webObjectList):
 					checkURL = True
 			#check for necessary data
 			if checkStatus == True and checkURL == True:
-				print ("Updating record for " + webObject["display_string"])
+				print ("	Updating record for " + webObject["display_string"])
 					
 				#loop though the CSV file and get list of collections
 				rowCount = 0
@@ -252,8 +255,22 @@ def UpdateWebRecord(webObjectList):
 					if len(csvData[1][2]) > 1:
 						webObject = makeNote("acqinfo", webObject, csvData[1], acqinfoLabelIA)
 						
+				#add Web Archives PhysTech note
+				phystechExist = False
+				for note in webObject["notes"]:
+					if note["type"] == "phystech":
+						if "subnotes" in note:
+							for subnote in note["subnotes"]:
+								if subnote["content"].lower() == "web archives":
+									phystechExist = True
+				if phystechExist == False:
+					#possible uid collision here, but very unlikely, right?
+					noteID = str(uuid.uuid4()).replace("-", "")
+					newSubnote = {"content": "Web Archives", "jsonmodel_type": "note_text", "publish": False}
+					newPhystech = {"type": "phystech", "persistent_id": noteID, "subnotes": [newSubnote], "jsonmodel_type": "note_multipart", "publish": False}
+					webObject["notes"].append(newPhystech)
 						
-				
+				newEnd = ""
 				if len(dateType) > 0 or len(dateTypeIA) > 0:
 					if len(dateType) > 0:
 						newBegin = firstNormal
@@ -272,37 +289,36 @@ def UpdateWebRecord(webObjectList):
 							else:
 								newEnd = lastNormalIA
 					
-					updateTime = datetime.now().isoformat("T")[:-4] + "Z"					
-					if "dates" in webObject:
-						sameDateType = False
-						for date in webObject["dates"]:
-							if date["label"].lower() == webDatesLabel.lower():
-								sameDateType = True
-								if newBegin < date["begin"]:
-									date["begin"] = newBegin
-								if dateType == "inclusive" or dateTypeIA == "inclusive":
-									date["date_type"] = "inclusive"
-									if not "end" in date:
-										date["end"] = newEnd
-									else:
-										if newEnd > date["end"]:
+					def updateDates(webObject, newBegin, newEnd, dateType, dateTypeIA, webDatesLabel):
+						updateTime = datetime.now().isoformat("T")[:-4] + "Z"					
+						if "dates" in webObject:
+							sameDateType = False
+							for date in webObject["dates"]:
+								if date["label"].lower() == webDatesLabel.lower():
+									sameDateType = True
+									if newBegin < date["begin"]:
+										date["begin"] = newBegin
+									if dateType == "inclusive" or dateTypeIA == "inclusive":
+										date["date_type"] = "inclusive"
+										if not "end" in date:
 											date["end"] = newEnd
-						if sameDateType == False:
+										else:
+											if newEnd > date["end"]:
+												date["end"] = newEnd
+							if sameDateType == False:
+								if dateType == "inclusive" or dateTypeIA == "inclusive":
+									newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "end": newEnd, "jsonmodel_type": "date", "date_type": "inclusive", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
+								else:
+									newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
+								webObject["dates"].append(newDates)
+						else:
 							if dateType == "inclusive" or dateTypeIA == "inclusive":
 								newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "end": newEnd, "jsonmodel_type": "date", "date_type": "inclusive", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
 							else:
 								newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
-							webObject["dates"].append(newDates)
-					else:
-						if dateType == "inclusive" or dateTypeIA == "inclusive":
-							newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "end": newEnd, "jsonmodel_type": "date", "date_type": "inclusive", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
-						else:
-							newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
-						webObject["dates"] = newDates
+							webObject["dates"] = newDates
 								
-
-					
-				if captureCountTotal > 0:
+				def updateExtent(webObject, captureCountTotal):
 					updateTime = datetime.now().isoformat("T")[:-4] + "Z"
 					if "extents" in webObject:
 						captureExtent = False
@@ -317,7 +333,44 @@ def UpdateWebRecord(webObjectList):
 					else:
 						newExtent = {"lock_version": 0, "system_mtime": updateTime, "jsonmodel_type": "extent", "user_mtime": updateTime, "number": str(captureCountTotal), "last_modified_by": user, "portion": "whole", "create_time": updateTime, "created_by": user, "extent_type": webExtentType}
 						webObject["extents"] = newExtent
-				
+					
+				#recursive function for updating parents
+				def updateParents(object, parentCount):
+					if "parent" in object:
+						parentCount = parentCount + 1
+						print ("		Updating parent " + str(parentCount) + "...")
+						parentID = object["parent"]["ref"]
+						parentObject = requests.get(aspaceURL + parentID,  headers=headers).json()
+						#serializeOutput("parentRecord", parentObject)
+						updateExtent(parentObject, captureCountTotal)
+						updateDates(parentObject, newBegin, newEnd, dateType, dateTypeIA, webDatesLabel)
+						#serializeOutput("parentRecord2", parentObject)
+						newParent = json.dumps(parentObject)
+						postParent = requests.post(aspaceURL + parentID,  headers=headers, data=newParent)
+						if postParent.status_code != 200:
+							raise ValueError("Error posting updated parent record to ArchivesSpace: " + postParent.text)
+						updateParents(parentObject, parentCount)
+						
+				if captureCountTotal > 0:
+					updateExtent(webObject, captureCountTotal)
+					updateDates(webObject, newBegin, newEnd, dateType, dateTypeIA, webDatesLabel)
+					if updateParentRecords.lower() == "true":
+						updateParents(webObject, 0)
+						
+						#update resource record
+						if "resource" in webObject:
+							resourceID = webObject["resource"]["ref"]
+							print ("		Updating resource...")
+							resourceObject = requests.get(aspaceURL + resourceID,  headers=headers).json()
+							#serializeOutput("parentResource", resourceObject)
+							updateExtent(resourceObject, captureCountTotal)
+							updateDates(resourceObject, newBegin, newEnd, dateType, dateTypeIA, webDatesLabel)
+							#serializeOutput("parentResource2", resourceObject)
+							newResource = json.dumps(resourceObject)
+							postResource = requests.post(aspaceURL + resourceID,  headers=headers, data=newResource)
+							if postResource.status_code != 200:
+								raise ValueError("Error posting updated resource record to ArchivesSpace: " + postResource.text)
+					
 				objectAIT = False
 				objectIA = False
 				for instance in webObject["instances"]:
@@ -347,29 +400,22 @@ def UpdateWebRecord(webObjectList):
 									
 				
 									
-				
-				
-				
-				
-				
-		
-#inital request for session
-r = requests.post(aspaceURL + "/users/" + user + "/login", data = {"password":pw})
-
-if r.status_code == "200":
-	print ("Connection Successful")
-
-sessionID = r.json()["session"]
-#print (sessionID)
-headers = {'X-ArchivesSpace-Session':sessionID}
-
-repos = requests.get(aspaceURL + "/repositories",  headers=headers).json()
-#print (repos)
-for repo in repos:
-	print ("Looking for Web Archives Records in " + repo["name"])
-	repoPath = repo["uri"]
-	#print (repoPath)
-	resources = requests.get(aspaceURL + repoPath + "/resources?page=1&page_size=200",  headers=headers).json()
+#recursive function to find records with web archives
+def webRecords(children):
+	for child in children:
+		if child["level"].lower() == "web archives":
+			if child["has_children"] == True:
+				#serializeOutput("parent", child)
+				webRecords(child["children"])
+			else:
+				#serializeOutput("child", child)
+				objectID = str(child["id"])
+				webObject = requests.get(aspaceURL + repoPath + "/archival_objects?id_set=" + objectID,  headers=headers).json()
+				#lowest level web record
+				UpdateWebRecord(webObject)
+	
+def findWebRecords(resources):
+	#serializeOutput("resources", resources)
 	count = 0
 	for record in resources["results"]:
 		#pp(record)
@@ -388,19 +434,38 @@ for repo in repos:
 								print ("found Web Archives in resource ---> " + record["title"])
 								
 								webCollection = requests.get(aspaceURL + repoPath + "/resources/" + resourceID  + "/tree",  headers=headers).json()
-								#serializeOutput("tree", webCollection)
-								children = webCollection["children"]
-								for child in children:
-									if child["level"].lower() == "web archives":
-										if child["has_children"] == True:
-											for nextChild in child["children"]:
-												if nextChild["level"].lower() == "web archives":
-													#serializeOutput("child", nextChild)
-													objectID = str(nextChild["id"])
-													webObject = requests.get(aspaceURL + repoPath + "/archival_objects?id_set=" + objectID,  headers=headers).json()
-													UpdateWebRecord(webObject)
-										else:
-											#serializeOutput("child", child)
-											objectID = str(child["id"])
-											webObject = requests.get(aspaceURL + repoPath + "/archival_objects?id_set=" + objectID,  headers=headers).json()
-											UpdateWebRecord(webObject)
+								serializeOutput("tree", webCollection)
+								webRecords(webCollection["children"])	
+
+#function to loop through paginated results
+def getResults(pageCount):
+	resources = requests.get(aspaceURL + repoPath + "/resources?page=" + str(pageCount) + "&page_size=" + str(paginatedResults),  headers=headers).json()
+	lastPage = resources["last_page"]
+	print ("Requesting resource results page " + str(pageCount) + " of " + str(lastPage))
+	findWebRecords(resources)
+	if lastPage > pageCount:
+		pageCount = pageCount + 1
+		getResults(pageCount)
+								
+#inital request for session
+r = requests.post(aspaceURL + "/users/" + user + "/login", data = {"password":pw})
+
+if r.status_code == "200":
+	print ("Connection Successful")
+
+sessionID = r.json()["session"]
+#print (sessionID)
+headers = {'X-ArchivesSpace-Session':sessionID}
+
+repos = requests.get(aspaceURL + "/repositories",  headers=headers).json()
+#print (repos)
+for repo in repos:
+	print ("Looking for Web Archives Records in " + repo["name"])
+	repoPath = repo["uri"]
+	#print (repoPath)
+	
+	#get paginated results
+	getResults(1)
+
+
+ 

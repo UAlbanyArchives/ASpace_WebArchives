@@ -13699,7 +13699,7 @@
     }, 
     {
       "component_id": "nam_ua670-3", 
-      "title": "Website of College and Predecessors", 
+      "title": "Websites of CEAS and its Predecessors, 2015-07-03 - 2016-10-13", 
       "instance_types": [], 
       "record_uri": "/repositories/2/archival_objects/131743", 
       "level": "Web Archives", 
@@ -13707,16 +13707,46 @@
       "children": [
         {
           "component_id": "nam_ua670-3_1", 
-          "title": "College of Engineering and Applied Sciences Website", 
-          "instance_types": [], 
+          "title": "College of Engineering and Applied Sciences Website, 2015-07-03 - 2016-10-13", 
+          "instance_types": [
+            "digital_object", 
+            "digital_object"
+          ], 
           "record_uri": "/repositories/2/archival_objects/131752", 
-          "level": "Web_Archives", 
+          "level": "Web Archives", 
+          "publish": true, 
+          "children": [
+            {
+              "title": "Lower Level Web Archives, 2015-07-03 - 2016-10-13", 
+              "instance_types": [], 
+              "record_uri": "/repositories/2/archival_objects/132601", 
+              "level": "Web Archives", 
+              "publish": true, 
+              "children": [], 
+              "node_type": "archival_object", 
+              "has_children": false, 
+              "suppressed": false, 
+              "id": 132601, 
+              "containers": []
+            }
+          ], 
+          "node_type": "archival_object", 
+          "has_children": true, 
+          "suppressed": false, 
+          "id": 131752, 
+          "containers": []
+        }, 
+        {
+          "title": "School of Information Science and Policy Website, 1997-06-07 - 2005-08-22", 
+          "instance_types": [], 
+          "record_uri": "/repositories/2/archival_objects/132599", 
+          "level": "Web Archives", 
           "publish": true, 
           "children": [], 
           "node_type": "archival_object", 
           "has_children": false, 
           "suppressed": false, 
-          "id": 131752, 
+          "id": 132599, 
           "containers": []
         }
       ], 

@@ -1,0 +1,292 @@
+{
+  "lock_version": 0, 
+  "system_mtime": "2016-10-10T15:13:26Z", 
+  "extents": [
+    {
+      "lock_version": 0, 
+      "system_mtime": "2016-10-10T14:50:17Z", 
+      "jsonmodel_type": "extent", 
+      "user_mtime": "2016-10-10T14:50:17Z", 
+      "number": "15", 
+      "last_modified_by": "admin", 
+      "portion": "whole", 
+      "create_time": "2016-10-10T14:50:17Z", 
+      "created_by": "admin", 
+      "extent_type": "cubic ft."
+    }, 
+    {
+      "lock_version": 0, 
+      "system_mtime": "2016-10-13T17:28:47.19Z", 
+      "portion": "whole", 
+      "create_time": "2016-10-13T17:28:47.19Z", 
+      "created_by": "greg", 
+      "jsonmodel_type": "extent", 
+      "extent_type": "Captures", 
+      "user_mtime": "2016-10-13T17:28:47.19Z", 
+      "number": "650", 
+      "last_modified_by": "greg"
+    }
+  ], 
+  "jsonmodel_type": "resource", 
+  "finding_aid_author": "Justin Holzer", 
+  "instances": [], 
+  "create_time": "2016-10-10T14:50:17Z", 
+  "publish": true, 
+  "finding_aid_date": "2016", 
+  "external_ids": [], 
+  "title": "College of Engineering and Applied Sciences Records", 
+  "external_documents": [], 
+  "created_by": "admin", 
+  "subjects": [
+    {
+      "ref": "/subjects/1708"
+    }, 
+    {
+      "ref": "/subjects/327"
+    }
+  ], 
+  "ead_location": "http://library.albany.edu/speccoll/findaids/eresources/findingaids/ua670.html", 
+  "deaccessions": [], 
+  "ead_id": "nam_ua670", 
+  "linked_agents": [
+    {
+      "terms": [], 
+      "ref": "/agents/corporate_entities/767", 
+      "role": "creator"
+    }, 
+    {
+      "terms": [], 
+      "ref": "/agents/corporate_entities/768", 
+      "role": "subject"
+    }, 
+    {
+      "terms": [], 
+      "ref": "/agents/corporate_entities/767", 
+      "role": "subject"
+    }, 
+    {
+      "terms": [], 
+      "ref": "/agents/corporate_entities/769", 
+      "role": "subject"
+    }
+  ], 
+  "repository": {
+    "ref": "/repositories/2"
+  }, 
+  "user_mtime": "2016-10-10T14:50:17Z", 
+  "rights_statements": [], 
+  "revision_statements": [
+    {
+      "system_mtime": "2016-10-10T14:50:17Z", 
+      "description": "EAD file created", 
+      "jsonmodel_type": "revision_statement", 
+      "user_mtime": "2016-10-10T14:50:17Z", 
+      "uri": "/revision_statement/1254", 
+      "last_modified_by": "admin", 
+      "repository": {
+        "ref": "/repositories/2"
+      }, 
+      "create_time": "2016-10-10T14:50:17Z", 
+      "created_by": "admin", 
+      "date": "2014"
+    }, 
+    {
+      "system_mtime": "2016-10-10T14:50:17Z", 
+      "description": "Encoded in EAD by Gregory Wiedeman", 
+      "jsonmodel_type": "revision_statement", 
+      "user_mtime": "2016-10-10T14:50:17Z", 
+      "uri": "/revision_statement/1255", 
+      "last_modified_by": "admin", 
+      "repository": {
+        "ref": "/repositories/2"
+      }, 
+      "create_time": "2016-10-10T14:50:17Z", 
+      "created_by": "admin", 
+      "date": "2016 February"
+    }
+  ], 
+  "linked_events": [], 
+  "finding_aid_title": "College of Engineering and Applied Sciences Records", 
+  "suppressed": false, 
+  "restrictions": false, 
+  "dates": [
+    {
+      "lock_version": 0, 
+      "system_mtime": "2016-10-10T14:50:17Z", 
+      "begin": "2000", 
+      "end": "2016-10-13", 
+      "jsonmodel_type": "date", 
+      "date_type": "inclusive", 
+      "user_mtime": "2016-10-10T14:50:17Z", 
+      "last_modified_by": "admin", 
+      "label": "creation", 
+      "create_time": "2016-10-10T14:50:17Z", 
+      "created_by": "admin", 
+      "expression": "2000-2015"
+    }
+  ], 
+  "classifications": [], 
+  "language": "eng", 
+  "level": "collection", 
+  "notes": [
+    {
+      "content": [
+        "Administrative records of the College, formerly known as the College of Computing and Information, contains programs in Informatics, Computer Science, and Information Studies."
+      ], 
+      "persistent_id": "941a851b18edb5d59c5bd0557b6edd24", 
+      "type": "abstract", 
+      "publish": true, 
+      "jsonmodel_type": "note_singlepart"
+    }, 
+    {
+      "content": [
+        "English"
+      ], 
+      "persistent_id": "74cd9b963feb7080de3d53be38bf8149", 
+      "type": "langmaterial", 
+      "publish": true, 
+      "jsonmodel_type": "note_singlepart"
+    }, 
+    {
+      "content": [
+        "The materials are located onsite in the department."
+      ], 
+      "persistent_id": "335f73585890f66ab287689dbaa93fa3", 
+      "type": "physloc", 
+      "publish": true, 
+      "jsonmodel_type": "note_singlepart"
+    }, 
+    {
+      "persistent_id": "c15072c8f47ef968b2aacdcec9842548", 
+      "type": "processinfo", 
+      "subnotes": [
+        {
+          "content": "Processed in 2016 by Justin Holzer.", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "publish": true
+    }, 
+    {
+      "persistent_id": "3901d26010b6ee786980a92b75d31e25", 
+      "type": "phystech", 
+      "subnotes": [
+        {
+          "content": "Web Archives", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "publish": true
+    }, 
+    {
+      "subnotes": [
+        {
+          "content": "The College of Computing and Information (CCI) was originally formed in 2005 from the School of Information Science and Policy and contained the Computer Science and Information Studies departments. In 2015, the school was renamed the College of Engineering and Applied Sciences and a new program in Computer Engineering was developed.", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "persistent_id": "a143c6bc07a8c1b28119961fc7ef20ea", 
+      "publish": true, 
+      "label": "Administrative History", 
+      "type": "bioghist"
+    }, 
+    {
+      "persistent_id": "46a988fc9370d7c3c23aa4feafdc67ca", 
+      "type": "scopecontent", 
+      "subnotes": [
+        {
+          "content": "Collection contains administrative records, such as internal assessments, meeting minutes, correspondence, budgetary information, grant proposals, and documentation of events and major programatic changes.", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "publish": true
+    }, 
+    {
+      "subnotes": [
+        {
+          "content": "The collection has no series, the original order of the material was kept.", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "persistent_id": "ad7d1e3d8dc1c77a72fb250215a42a06", 
+      "publish": true, 
+      "label": "Arrangement of the Collection", 
+      "type": "arrangement"
+    }, 
+    {
+      "subnotes": [
+        {
+          "content": "All items in this collection were transferred to the University Libraries, M.E. Grenander Department of Special Collections and Archives by Assistant Dean Nan Carroll.<date normal=\"2015-08\">2015 August</date>", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "persistent_id": "738847078d7666690ad6a920b7cc5271", 
+      "publish": true, 
+      "label": "Acquisition Information", 
+      "type": "acqinfo"
+    }, 
+    {
+      "subnotes": [
+        {
+          "content": "Access to this collection is restricted. Portions of the collection may contain recent administrative records and/or personally identifiable information. Please contact an archivist for more information.\n\n Red asterisks (***) denote restricted items.", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "persistent_id": "6e698160cd57ad841bbcc9254d3369c1", 
+      "publish": true, 
+      "label": "Access", 
+      "type": "accessrestrict"
+    }, 
+    {
+      "subnotes": [
+        {
+          "content": "This page may contain links to digital objects. Access to these images and the technical capacity to download them does not imply permission for re-use. Digital objects may be used freely for personal reference use, referred to, or linked to from other web sites. \n\n Researchers do not have permission to publish or disseminate material from these collections without permission from an archivist and/or the copyright holder.\n\n The researcher assumes full responsibility for conforming to the laws of copyright. Some materials in these collections may be protected by the U.S. Copyright Law (Title 17, U.S.C.) and/or by the copyright or neighboring-rights laws of other nations. More information about U.S. Copyright is provided by the Copyright Office. Additionally, re-use may be restricted by terms of University Libraries gift or purchase agreements, donor restrictions, privacy and publicity rights, licensing and trademarks. \n\n The University Archives are eager to hear from any copyright owners who are not properly identified so that appropriate information may be provided in the future.", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "persistent_id": "c6023a2e12561b224fd97e93adcc9e14", 
+      "publish": true, 
+      "label": "Copyright", 
+      "type": "userestrict"
+    }, 
+    {
+      "subnotes": [
+        {
+          "content": "Preferred citation for this material is as follows:\n\n Identification of specific item, series, box, folder, College of Engineering and Applied Sciences Records, 2000-2014. M.E. Grenander Department of Special Collections and Archives, University Libraries, University at Albany, State University of New York (hereafter referred to as the College of Engineering and Applied Sciences Records).", 
+          "jsonmodel_type": "note_text", 
+          "publish": true
+        }
+      ], 
+      "jsonmodel_type": "note_multipart", 
+      "persistent_id": "73fd24edeed5af18206593abb722b666", 
+      "publish": true, 
+      "label": "Preferred Citation", 
+      "type": "prefercite"
+    }
+  ], 
+  "tree": {
+    "ref": "/repositories/2/resources/387/tree"
+  }, 
+  "uri": "/repositories/2/resources/387", 
+  "last_modified_by": "admin", 
+  "id_0": "nam_ua670", 
+  "finding_aid_language": "English", 
+  "related_accessions": [], 
+  "finding_aid_status": "new"
+}

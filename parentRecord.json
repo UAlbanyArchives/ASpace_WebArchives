@@ -1,0 +1,38 @@
+{
+  "lock_version": 1, 
+  "external_documents": [], 
+  "extents": [], 
+  "jsonmodel_type": "archival_object", 
+  "ref_id": "96008904438e67333fdfe89c9a8df6ca", 
+  "instances": [], 
+  "create_time": "2016-10-10T17:55:24Z", 
+  "created_by": "admin", 
+  "title": "Websites of CEAS and its Predecessors", 
+  "display_string": "Websites of CEAS and its Predecessors", 
+  "publish": true, 
+  "subjects": [], 
+  "other_level": "Web Archives", 
+  "system_mtime": "2016-10-11T14:48:03Z", 
+  "linked_agents": [], 
+  "repository": {
+    "ref": "/repositories/2"
+  }, 
+  "has_unpublished_ancestor": false, 
+  "user_mtime": "2016-10-11T14:48:03Z", 
+  "rights_statements": [], 
+  "linked_events": [], 
+  "external_ids": [], 
+  "suppressed": false, 
+  "dates": [], 
+  "component_id": "nam_ua670-3", 
+  "resource": {
+    "ref": "/repositories/2/resources/387"
+  }, 
+  "language": "eng", 
+  "level": "otherlevel", 
+  "notes": [], 
+  "uri": "/repositories/2/archival_objects/131743", 
+  "last_modified_by": "admin", 
+  "restrictions_apply": false, 
+  "position": 2
+}
