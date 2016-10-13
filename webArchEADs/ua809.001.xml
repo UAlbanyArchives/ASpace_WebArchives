@@ -1046,47 +1046,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_ua809.001-3</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2013-02-15/2016-09-28">2013 February 15-2016 September 28</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">294 captures</extent>
-          </physdesc>
+          <unittitle>Albany Student Press Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua809.001-3_1</unitid>
-            <container type="Web-Archive">1</container>
-            <unittitle>http://www.albanystudentpress.net/ - University Archives collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2015-10-07/2016-09-28">2015 October 7-2016 September 28</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="http://wayback.archive-it.org/6372/*/http://www.albanystudentpress.net/" title="http://www.albanystudentpress.net/ - University Archives collection"/>
-          </did>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua809.001-3_2</unitid>
-            <container type="WARC">1</container>
-            <unittitle>WARC file for http://www.albanystudentpress.net/, (please see https://en.wikipedia.org/wiki/Web_ARChive for more details)</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2015-10-07/2016-09-28">2015 October 7-2016 September 28</unitdate>
-          </did>
-          <accessrestrict>
-            <p>WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in researching with web archives.</p>
-          </accessrestrict>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua809.001-3_3</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.albanystudentpress.net/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-02-15/2016-09-28">2013 February 15-2016 September 28</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.albanystudentpress.net/" title="http://www.albanystudentpress.net/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
     </dsc>
   </archdesc>

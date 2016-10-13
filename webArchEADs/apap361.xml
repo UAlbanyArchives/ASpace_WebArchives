@@ -94,27 +94,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_apap361-1</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2011-02-03/2016-09-28">2011 February 3-2016 September 28</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">129 captures</extent>
-          </physdesc>
+          <unittitle>The Pride Center of the Capital Region Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap361-1_1</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>https://www.capitalpridecenter.org/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2011-02-03/2016-09-28">2011 February 3-2016 September 28</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/https://www.capitalpridecenter.org/" title="https://www.capitalpridecenter.org/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
     </dsc>
   </archdesc>

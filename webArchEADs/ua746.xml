@@ -116,48 +116,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_ua746-1</unitid>
-          <unittitle label="Series">Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2008-07-31/2016-09-28">2008 July 31-2016 September 28</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">2844 captures</extent>
-          </physdesc>
+          <unittitle label="Series">UAlbany Sports Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-          <p>Surface-level crawling of www.albany.edu is performed daily which should includes most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This includes: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu,	library.albany.edu,	events.albany.edu,	cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua746-1_1</unitid>
-            <container type="Web-Archive">1</container>
-            <unittitle>http://www.ualbanysports.com/ - University Archives collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-05-08/2016-09-28">2013 May 8-2016 September 28</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="http://wayback.archive-it.org/3308/*/http://www.ualbanysports.com/" title="http://www.ualbanysports.com/ - University Archives collection"/>
-          </did>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua746-1_2</unitid>
-            <container type="WARC">1</container>
-            <unittitle>WARC file for http://www.ualbanysports.com/, (please see https://en.wikipedia.org/wiki/Web_ARChive for more details)</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-05-08/2016-09-28">2013 May 8-2016 September 28</unitdate>
-          </did>
-          <accessrestrict>
-            <p>WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in researching with web archives.</p>
-          </accessrestrict>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua746-1_3</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.ualbanysports.com/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2008-07-31/2016-09-28">2008 July 31-2016 September 28</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.ualbanysports.com/" title="http://www.ualbanysports.com/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
       <c01 level="series">
         <did>

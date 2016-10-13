@@ -101,27 +101,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_apap362-1</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2004-06-10/2016-07-23">2004 June 10-2016 July 23</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">187 captures</extent>
-          </physdesc>
+          <unittitle>Parks &amp; Trails New York Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap362-1_1</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.ptny.org/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2004-06-10/2016-07-23">2004 June 10-2016 July 23</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.ptny.org/" title="http://www.ptny.org/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
     </dsc>
   </archdesc>

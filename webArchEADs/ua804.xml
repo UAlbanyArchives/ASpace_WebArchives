@@ -2109,28 +2109,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_ua804-7</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2006-08-30/2016-09-17">2006 August 30-2016 September 17</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">552 captures</extent>
-          </physdesc>
+          <unittitle>Student Association Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-          <p>Surface-level crawling of www.albany.edu is performed daily which should includes most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This includes: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu,	library.albany.edu,	events.albany.edu,	cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua804-7_1</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>www.albany.edu/studentassociation/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2006-08-30/2016-09-17">2006 August 30-2016 September 17</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/www.albany.edu/studentassociation/" title="www.albany.edu/studentassociation/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
     </dsc>
   </archdesc>

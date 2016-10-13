@@ -115,48 +115,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_apap331-1</unitid>
-          <unittitle label="Series">Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="1998-12-05/2016-08-30">1998 December 5-2016 August 30</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">904 captures</extent>
-          </physdesc>
+          <unittitle label="Series">New York Civil Liberties Union Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-          <p>The following seeds are crawled monthly: www.nyclu.org, www.facebook.com/NYCLU, www.twitter.com/NYCLU, and en.wikipedia.org/wiki/New_York_Civil_Liberties_Union. The domains en.wikipedia.org, twitter.com, and upload.wikimedia.org are subjected to a 1,000 document limit.</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap331-1_1</unitid>
-            <container type="Web-Archive">1</container>
-            <unittitle>http://www.nyclu.org/ - University Archives collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2016-05-26/2016-08-30">2016 May 26-2016 August 30</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="http://wayback.archive-it.org/7081/*/http://www.nyclu.org/" title="http://www.nyclu.org/ - University Archives collection"/>
-          </did>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap331-1_2</unitid>
-            <container type="WARC">1</container>
-            <unittitle>WARC file for http://www.nyclu.org/, (please see https://en.wikipedia.org/wiki/Web_ARChive for more details)</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2016-05-26/2016-08-30">2016 May 26-2016 August 30</unitdate>
-          </did>
-          <accessrestrict>
-            <p>WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in researching with web archives.</p>
-          </accessrestrict>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap331-1_3</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.nyclu.org/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="1998-12-05/2016-08-30">1998 December 5-2016 August 30</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.nyclu.org/" title="http://www.nyclu.org/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
       <c01 level="series">
         <did>

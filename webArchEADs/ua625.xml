@@ -152,29 +152,9 @@
       <c01 level="series">
         <did>
           <unitid>nam_ua625-1</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="1997-12-11/2016-02-21">1997 December 11-2016 February 21</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">469 captures</extent>
-          </physdesc>
+          <unittitle>Department Of Computer Science Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-          <p>Surface-level crawling of www.albany.edu is performed daily which chould include most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This include: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu,	library.albany.edu,	events.albany.edu,	cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua625-1_1</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.cs.albany.edu/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="1997-12-11/2016-02-21">1997 December 11-2016 February 21</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/3308" title="http://www.cs.albany.edu/ - Internet Archive collection"/>
-          </did>
-        </c02>
-      </c01>
+		</c01>
     </dsc>
   </archdesc>
 </ead>

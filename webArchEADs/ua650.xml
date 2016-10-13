@@ -3274,48 +3274,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_ua650-4</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="1997-06-07/2016-09-17">1997 June 7-2016 September 17</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">858 captures</extent>
-          </physdesc>
+          <unittitle>School of Education Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-          <p>Surface-level crawling of www.albany.edu is performed daily which should includes most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This includes: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu,	library.albany.edu,	events.albany.edu,	cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua650-4_1</unitid>
-            <container type="Web-Archive">1</container>
-            <unittitle>http://www.albany.edu/education/ - University Archives collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-05-08/2016-09-17">2013 May 8-2016 September 17</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="http://wayback.archive-it.org/3308/*/http://www.albany.edu/education/" title="http://www.albany.edu/education/ - University Archives collection"/>
-          </did>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua650-4_2</unitid>
-            <container type="WARC">1</container>
-            <unittitle>WARC file for http://www.albany.edu/education/, (please see https://en.wikipedia.org/wiki/Web_ARChive for more details)</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-05-08/2016-09-17">2013 May 8-2016 September 17</unitdate>
-          </did>
-          <accessrestrict>
-            <p>WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in researching with web archives.</p>
-          </accessrestrict>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua650-4_3</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.albany.edu/education/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="1997-06-07/2016-09-17">1997 June 7-2016 September 17</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.albany.edu/education/" title="http://www.albany.edu/education/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
     </dsc>
   </archdesc>

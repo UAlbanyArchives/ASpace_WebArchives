@@ -252,49 +252,9 @@
       <head>Container List</head>
       <c01 level="series">
         <did>
-          <unittitle label="Series">Web Archives</unittitle>
+          <unittitle label="Series">University Council Website</unittitle>
           <unitid>nam_ua100-1</unitid>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2007-10-31/2016-09-17">2007 October 31-2016 September 17</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">320 captures</extent>
-          </physdesc>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-          <p>Surface-level crawling of www.albany.edu is performed daily which should includes most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This includes: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu,	library.albany.edu,	events.albany.edu,	cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua100-1_1</unitid>
-            <container type="Web-Archive">1</container>
-            <unittitle>http://www.albany.edu/council/ - University Archives collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-05-08/2016-09-17">2013 May 8-2016 September 17</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="http://wayback.archive-it.org/3308/*/http://www.albany.edu/council/" title="http://www.albany.edu/council/ - University Archives collection"/>
-          </did>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua100-1_2</unitid>
-            <container type="WARC">1</container>
-            <unittitle>WARC file for http://www.albany.edu/council/, (please see https://en.wikipedia.org/wiki/Web_ARChive for more details)</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2013-05-08/2016-09-17">2013 May 8-2016 September 17</unitdate>
-          </did>
-          <accessrestrict>
-            <p>WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in researching with web archives.</p>
-          </accessrestrict>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_ua100-1_3</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.albany.edu/council/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2007-10-31/2016-09-17">2007 October 31-2016 September 17</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.albany.edu/council/" title="http://www.albany.edu/council/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
       <c01 level="series">
         <did>
@@ -1477,7 +1437,7 @@
             <container type="Box">3</container>
             <container type="Folder">20</container>
             <unittitle>Annual report of the council to the chair of the board of the trustees</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="1987-07-01/1988-06-31">1987 July 1-1988 June 30</unitdate>
+            <unitdate calendar="gregorian" era="ce" normal="1987-07-01/1988-06-30">1987 July 1-1988 June 30</unitdate>
           </did>
         </c02>
         <c02 level="file">

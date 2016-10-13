@@ -23789,47 +23789,8 @@
       <c01 level="series">
         <did>
           <unitid>nam_apap104-10</unitid>
-          <unittitle>Web Archives</unittitle>
-          <unitdate type="inclusive" era="ce" calendar="gregorian" normal="2001-04-28/2016-09-17">2001 April 28-2016 September 17</unitdate>
-          <physdesc>
-            <extent unit="captures" type="spaceoccupied">352 captures</extent>
-          </physdesc>
+          <unittitle>Environmental Advocates of New York Website</unittitle>
         </did>
-        <acqinfo>
-          <p>Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.</p>
-        </acqinfo>
-        <phystech>
-          <p>Web Archives</p>
-        </phystech>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap104-10_1</unitid>
-            <container type="Web-Archive">1</container>
-            <unittitle>http://www.eany.org/ - University Archives collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2016-05-31/2016-07-31">2016 May 31-2016 July 31</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="http://wayback.archive-it.org/7082/*/http://www.eany.org/" title="http://www.eany.org/ - University Archives collection"/>
-          </did>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap104-10_2</unitid>
-            <container type="WARC">1</container>
-            <unittitle>WARC file for http://www.eany.org/, (please see https://en.wikipedia.org/wiki/Web_ARChive for more details)</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2016-05-31/2016-07-31">2016 May 31-2016 July 31</unitdate>
-          </did>
-          <accessrestrict>
-            <p>WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in researching with web archives.</p>
-          </accessrestrict>
-        </c02>
-        <c02 level="file">
-          <did>
-            <unitid>nam_apap104-10_3</unitid>
-            <container type="Web-Archive">2</container>
-            <unittitle>http://www.eany.org/ - Internet Archive collection</unittitle>
-            <unitdate calendar="gregorian" era="ce" normal="2001-04-28/2016-09-17">2001 April 28-2016 September 17</unitdate>
-            <dao actuate="onrequest" linktype="simple" show="new" href="https://web.archive.org/web/*/http://www.eany.org/" title="http://www.eany.org/ - Internet Archive collection"/>
-          </did>
-        </c02>
       </c01>
     </dsc>
   </archdesc>
