@@ -608,6 +608,8 @@ try:
 
 except Exception as errorMsg:
 	try:
+		exc_type, exc_obj, exc_tb = sys.exc_info()
+		lineNum = exc_tb.tb_lineno
 		import smtplib
 		#get config from webArchives.ini
 		if sys.version_info[0] < 3:
@@ -625,22 +627,22 @@ except Exception as errorMsg:
 		portNum = config.get('error_email', 'port')
 		subject = "Error Updating Web Archives Records in ArchivesSpace"
 		
-		if errorEmail.lower == "true":
+		if errorEmail.lower() == "true":
 			emailMsg = "Sent Error Email"
 		else:
 			emailMsg = "Email errors turned off"
-		body = "\n\n**********************************************************************************************************\nERROR:\n" + emailMsg + "\n" + str(errorMsg) + "\n**********************************************************************************************************\n"
+		body = "**********************************************************************************************************\nERROR: Line: " + str(lineNum) + "\n" + emailMsg + "\n" + str(errorMsg) + "\n**********************************************************************************************************\n"
 		message = 'Subject: %s\n\n%s' % (subject, body)
 		smtpObj = smtplib.SMTP(host=emailHost, port=int(portNum))
 		smtpObj.ehlo()
 		smtpObj.starttls()
 		smtpObj.ehlo()
 		smtpObj.login(sender,pw)
-		smtpObj.sendmail(sender, receivers, message)
+		smtpObj.sendmail(sender, receiver, message)
 		smtpObj.quit()
 		log(message)
-	except smtplib.SMTPException, error:
-		log("\n\n**********************************************************************************************************\nERROR:\nFailed to send error email.\n" + str(error) + "\n" + str(errorMsg) + "\n**********************************************************************************************************\n")
+	except Exception as error:
+		log("**********************************************************************************************************\nERROR: Line: " + str(lineNum) + "\\nFailed to send error email.\n" + str(error) + "\n" + str(errorMsg) + "\n**********************************************************************************************************\n")
 	sys.exit()
 
  
