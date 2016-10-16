@@ -350,20 +350,20 @@ try:
 										newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
 									if dateExpressions.lower().strip() == "true":
 										if dateType == "inclusive" or dateTypeIA == "inclusive":
-											date["expression"] = iso2DACS(date["begin"]) + "-" + iso2DACS(date["end"])
+											newDates["expression"] = iso2DACS(newDates["begin"]) + "-" + iso2DACS(newDates["end"])
 										else:
-											date["expression"] = iso2DACS(date["begin"])
+											newDates["expression"] = iso2DACS(newDates["begin"])
 									webObject["dates"].append(newDates)
 							else:
 								if dateType == "inclusive" or dateTypeIA == "inclusive":
 									newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "end": newEnd, "jsonmodel_type": "date", "date_type": "inclusive", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
 								else:
 									newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
-								if "expression" in date or dateExpressions.lower().strip() == "true":
+								if "expression" in newDates or dateExpressions.lower().strip() == "true":
 									if dateType == "inclusive" or dateTypeIA == "inclusive":
-										date["expression"] = iso2DACS(date["begin"]) + "-" + iso2DACS(date["end"])
+										newDates["expression"] = iso2DACS(newDates["begin"]) + "-" + iso2DACS(date["end"])
 									else:
-										date["expression"] = iso2DACS(date["begin"])
+										newDates["expression"] = iso2DACS(newDates["begin"])
 								webObject["dates"] = newDates
 									
 					def updateExtent(webObject, captureCountTotal):
@@ -567,7 +567,7 @@ try:
 			#pp(record)
 			#print (record["ead_id"] + " -- " + record["title"])
 			count = count + 1
-			#if record["ead_id"] == "nam_apap361":
+			#if record["ead_id"] == "nam_apap104":
 			resourceID = record["uri"].split("/resources/")[1]
 			notes = record["notes"]
 			for note in notes:
@@ -612,6 +612,7 @@ try:
 
 except Exception as errorMsg:
 	try:
+		print (sys.exc_info())
 		exc_type, exc_obj, exc_tb = sys.exc_info()
 		lineNum = exc_tb.tb_lineno
 		import smtplib
