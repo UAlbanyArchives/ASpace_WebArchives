@@ -1,18 +1,18 @@
 Collection|Use|Acquisition notes|
 Internet Archive|true|This data is not held by UAlbany, but within the Internet Archive's collections. The UAlbany web archiving program has contributed to the Internet Archive's collections since 2013, but has no control over their acquisition processes.|
 3308|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|Surface-level crawling of www.albany.edu is performed daily which should includes most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This includes: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu, library.albany.edu, events.albany.edu, cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu
-6372|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6915|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-7082|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-7081|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6916|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-7801|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-7802|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6918|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6917|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-5793|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-5967|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6832|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6913|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
-6914|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6372|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6915|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+7082|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+7081|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6916|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+7801|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+7802|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6918|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6917|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+5793|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+5967|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6832|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6913|true|Web crawling is managed through the Internet Archive's Archive-It service.|
+6914|true|Web crawling is managed through the Internet Archive's Archive-It service.|
 WARC|true|Researchers interested in data analysis with web archives may request a WARC file. WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in advanced research with web archives.|
