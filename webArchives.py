@@ -4,6 +4,7 @@ import os
 import csv
 import sys
 import uuid
+from DACS import stamp2DACS, iso2DACS
 from datetime import datetime
 
 #for debugging
@@ -26,20 +27,6 @@ try:
 
 	__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
-	#date conversion function
-	#Function to make DACS and Normal (ISO) dates from timestamp
-	def stamp2DACS(timestamp):
-		calendar = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "August", "09": "September", "10": "October", "11": "November", "12": "December"}
-		stamp = timestamp[:8]
-		year = stamp[:4]
-		month = stamp[4:6]
-		day = stamp[-2:]
-		normal = year + "-" + month + "-" + day
-		if day.startswith("0"):
-			day = day[-1:]
-		dacs = year + " " + calendar[month] + " " + day
-		return dacs, normal
-
 	#get config from webArchives.ini
 	if sys.version_info[0] < 3:
 		import ConfigParser
@@ -53,6 +40,7 @@ try:
 	aspaceURL = config.get('config_data', 'Backend_URL')
 	paginatedResults = config.get('config_data', 'Paginated_Results')
 	updateParentRecords = config.get('config_data', 'Update_Parents')
+	dateExpressions = config.get('config_data', 'Date_Expressions')
 	webExtentType = config.get('custom_labels', 'Web_Extents')
 	webDatesLabel = config.get('custom_labels', 'Web_Dates_Label')
 	publishNotes = config.get('custom_labels', 'Publish_Notes')
@@ -350,17 +338,32 @@ try:
 											else:
 												if newEnd > date["end"]:
 													date["end"] = newEnd
+										if "expression" in date or dateExpressions.lower().strip() == "true":
+											if date["date_type"] == "inclusive":
+												date["expression"] = iso2DACS(date["begin"]) + "-" + iso2DACS(date["end"])
+											else:
+												date["expression"] = iso2DACS(date["begin"])
 								if sameDateType == False:
 									if dateType == "inclusive" or dateTypeIA == "inclusive":
 										newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "end": newEnd, "jsonmodel_type": "date", "date_type": "inclusive", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
 									else:
 										newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
+									if dateExpressions.lower().strip() == "true":
+										if dateType == "inclusive" or dateTypeIA == "inclusive":
+											date["expression"] = iso2DACS(date["begin"]) + "-" + iso2DACS(date["end"])
+										else:
+											date["expression"] = iso2DACS(date["begin"])
 									webObject["dates"].append(newDates)
 							else:
 								if dateType == "inclusive" or dateTypeIA == "inclusive":
 									newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "end": newEnd, "jsonmodel_type": "date", "date_type": "inclusive", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
 								else:
 									newDates = {"lock_version": 0,  "system_mtime": updateTime, "begin": newBegin, "jsonmodel_type": "date", "date_type": "single", "user_mtime": updateTime, "last_modified_by": user, "label": webDatesLabel.lower(), "create_time": updateTime, "created_by": user}
+								if "expression" in date or dateExpressions.lower().strip() == "true":
+									if dateType == "inclusive" or dateTypeIA == "inclusive":
+										date["expression"] = iso2DACS(date["begin"]) + "-" + iso2DACS(date["end"])
+									else:
+										date["expression"] = iso2DACS(date["begin"])
 								webObject["dates"] = newDates
 									
 					def updateExtent(webObject, captureCountTotal):
