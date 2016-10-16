@@ -127,7 +127,6 @@ try:
 							
 					#variable to count number of captures:
 					captureCountAIT = 0
-					captureCountCollection = 0
 					collectionNumber = ""
 					dateType = ""
 					dateTypeIA = ""
@@ -140,6 +139,7 @@ try:
 															
 							firstPage = responseLines[0]
 							lastPage = ""
+							captureCountCollection = 0
 							for textLine in responseLines:
 								if len(textLine) > 5:
 									if webStatus == "initial" and initialCheck == True:
@@ -564,6 +564,7 @@ try:
 			#pp(record)
 			#print (record["ead_id"] + " -- " + record["title"])
 			count = count + 1
+			#if record["ead_id"] == "nam_apap361":
 			resourceID = record["uri"].split("/resources/")[1]
 			notes = record["notes"]
 			for note in notes:
@@ -577,7 +578,7 @@ try:
 								webCollection = requests.get(aspaceURL + repoPath + "/resources/" + resourceID  + "/tree",  headers=headers).json()
 								#serializeOutput("tree", webCollection)
 								webRecords(webCollection["children"])	
-		log("found and updated " + str(webCount) + " web archives records in " + str(count) + " total resources.")
+		log("found and updated " + str(webCount) + " web archives resource in " + str(count) + " total resources.")
 
 	#function to loop through paginated results
 	def getResults(pageCount):
