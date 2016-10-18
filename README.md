@@ -17,7 +17,7 @@ The script just needs to know which Archival Objects are contained in web archiv
 * All archival objects that are contained in web archives must have two external document notes (do not require publish, not case-sensitive):
 	* Title: "Status", Location: "active" "initial" or "inactive"
 		* Active will continually update dates and extents
-		* Initial, if date is entered will only inlude captures
+		* Initial, if a date is entered will only include captures before or between those dates
 		* Inactive will be ignored
 * The default extent label is "Captures" and this will need to be added in the Controlled Values or changed in the config file.
 
