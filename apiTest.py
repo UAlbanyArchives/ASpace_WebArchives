@@ -2,6 +2,11 @@ import requests
 import json
 import ConfigParser
 import os
+import urllib2
+from BeautifulSoup import BeautifulSoup
+
+def pp(output):
+	print (json.dumps(output, indent=2))
 
 # get local_settings
 __location__ = os.path.dirname(os.path.abspath(__file__))
@@ -10,30 +15,39 @@ config = ConfigParser.ConfigParser()
 config.read(configPath)
 user = config.get('Archive-It', 'username')
 password = config.get('Archive-It', 'password')
-csrftoken = config.get('Archive-It', 'csrftoken')
 
+collections = "https://partner.archive-it.org/api/collection?format=json&account=652"
+seeds = "https://partner.archive-it.org/api/seed?format=json&collection=7801"
+seedRules = "https://partner.archive-it.org/api/scope_rule?format=json&seed=1152239"
+crawl = "https://partner.archive-it.org/api/crawl_job/289348?format=json"
 
-loginURL = "https://partner.archive-it.org/login"
-creds = {'username': (None, user), 'password': (None, password)}
-headers = {'Cookie': csrftoken}
+crawlData = "https://partner.archive-it.org/api/crawl_log/652/crawl_job/297448?queryType=topN&showOnly=all&resultLimit=2&orderBy=count&dimensions=job_name&aggregations=size,count&format=json"
+#loginURL = "https://partner.archive-it.org/api/crawl_log/652/crawl_job/297448?queryType=topN&showOnly=all,new&resultLimit=2&orderBy=count&dimensions=job_name&aggregations=size,count&format=json"
+#loginURL = "https://partner.archive-it.org/api/652/collections/6372/seeds?format=json"
+#loginURL =  "https://partner.archive-it.org/api/scope_rule?format=json&seed=1020828"
 
-#first POST request for login
-r = requests.post(loginURL, headers=headers, files=creds)
+s = requests.Session()
+s.auth = (user, password)
 
-#get session key and csrftoken
-cookies = r.request.headers["Cookie"]
-print (cookies)
-token = cookies.split("; ")[1].split("=")[1]
-key = cookies.split("; ")[0].split("=")[1]
-session = {'csrftoken': token, "sessionid": key}
+r = s.get(collections)
+print r.status_code
+#print r.headers
+#print r.cookies
+#print r.request.headers
+#print r.text
+#print pp(r.json())
 
-#second GET to get seeds for collection 6272
-url = "https://partner.archive-it.org/652/collections/6372/seeds?format=json" # added ?format=json here
-col = requests.get(url, cookies=session)
-print (col.status_code)
+#rules = s.get(seedRules)
+#print pp(rules.json())
 
-#works
-print (col.text)
+col = s.get(crawl)
+print col.status_code
+print col.headers
+print col.cookies
+print col.request.headers
+#print col.text
+pp(col.json())
 
-#does not work
-print (col.json)
+url = "http://wayback.archive-it.org/3308/20140115125139/http://www.albany.edu/undergraduate_bulletin/"
+soup = BeautifulSoup(urllib2.urlopen(url))
+print soup.title.string
