@@ -1,5 +1,7 @@
 # ASpace_WebArchives
 
+#### This project is no longer actively maintained, see [describingWebArchives](https://github.com/UAlbanyArchives/describingWebArchives) for the current project
+
 This is a working example of how to automate description of Web Archives in ArchivesSpace using the API and the Archive-It and Internet Archive CDX Servers.
 
 If you enter some basic information in ASpace, the webArchives.py script will update dates, extents, and add digital object records that provide access to web archives for archival objects and their parent objects and resources.
